@@ -1,4 +1,4 @@
-# Test file for "CS120BLab6_SynchSMs"
+# Test file for "cs120b_lab6"
 
 
 # commands.gdb provides the following functions for ease:
