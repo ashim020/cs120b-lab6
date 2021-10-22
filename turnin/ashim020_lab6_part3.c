@@ -7,7 +7,7 @@
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.
  *
- *  	Demo Link:
+ *  	Demo Link: https://drive.google.com/file/d/1vKqsA9PZsfaQjKjMg3aFreRA_QQl7E3j/view?usp=sharing
  */
 #include <avr/io.h>
 #include <avr/interrupt.h>
@@ -16,6 +16,9 @@
 #endif
 
 enum States {Start, STATE} state;
+
+unsigned char tmpA;
+unsigned char tmpB;
 
 volatile unsigned char TimerFlag = 0;
 
@@ -60,17 +63,17 @@ void Tick(){
             break;
 
         case STATE:
-            if ((tmpA && 0x03) == 0x02) {
+            if ((tmpA & 0x03) == 0x02) {
                 if (tmpB < 9) {
                     tmpB++;
                 }
             }
-            else if ((tmpA && 0x03) == 0x01) {
+            else if ((tmpA & 0x03) == 0x01) {
                 if (tmpB > 0) {
                     tmpB--;
                 }
             }
-            else if ((tmpA && 0x03) == 0x00) {
+            else if ((tmpA & 0x03) == 0x00) {
                 tmpB = 0;
             }
             break;
