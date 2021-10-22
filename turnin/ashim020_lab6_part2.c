@@ -62,7 +62,7 @@ void Tick(){
             break;
 
         case ONE:
-	    if (~PINA == 0x01) {
+	    if (PINA == 0xFE) {
 	        state = BUTTON;
 	    } else {
                 state = TWO;
@@ -70,7 +70,7 @@ void Tick(){
             break;
 
         case TWO:
-            if (~PINA == 0x01) {
+            if (PINA == 0xFE) {
 	        state = BUTTON;
 	    } else {
 	        if (alt) {
@@ -82,7 +82,7 @@ void Tick(){
             break;
 
 	case THREE:
-	    if (~PINA == 0x01) {
+	    if (PINA == 0xFE) {
 		state = BUTTON;
 	    } else {
 		state = TWO;
@@ -90,7 +90,7 @@ void Tick(){
 	    break;
 
 	case BUTTON:
-	    if (~PINA == 0x01) {
+	    if (PINA == 0xFE) {
 		state = BUTTON;
 	    } else {
 		state = WAIT;
@@ -98,7 +98,7 @@ void Tick(){
 	    break;
 
 	case WAIT:
-	    if (~PINA == 0x01) {
+	    if (PINA == 0xFE) {
 		state = ONE;
 	    } else {
 		state = WAIT;
