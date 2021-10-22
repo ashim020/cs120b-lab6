@@ -7,7 +7,7 @@
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.
  *
- *  	Demo Link:
+ *  	Demo Link: https://drive.google.com/file/d/1IrOnRK3XOJjZ2vGyUr2aktf5puTTWkQO/view?usp=sharing
  */
 #include <avr/io.h>
 #include <avr/interrupt.h>
@@ -33,10 +33,6 @@ void TimerOn() {
 
 void TimerOff() {
 	TCCR1B = 0x00;
-}
-
-void TimerISR(){
-	TimerFlag = 1;
 }
 
 ISR(TIMER1_COMPA_vect) {
